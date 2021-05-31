@@ -5,10 +5,7 @@ import com.example.learn.model.Employee;
 import com.example.learn.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -25,7 +22,7 @@ public class MyController {
         return "home.jsp";
     }
 
-    @RequestMapping("/addEmployee")
+    @PostMapping("/addEmployee")
     @ResponseBody
     public Employee addEmployee(Employee employee){
         return employeeService.addEmployee(employee);
