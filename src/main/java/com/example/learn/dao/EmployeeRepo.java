@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EmployeeRepo extends CrudRepository<Employee,Integer> {
     Employee findByAge(int age);
-
+    Employee findById(int id);
     Employee findByDepartment(String department);
 
 }

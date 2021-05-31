@@ -13,14 +13,15 @@ public class EmployeeService {
 
     public Employee addEmployee(Employee employee){
         repo.save(employee);
-        return employee;
+        Employee emp= repo.findById(employee.getId());
+        return emp;
     }
 
-    public Employee getAlienByAge(int age){
+    public Employee getEmployeeByAge(int age){
         return repo.findByAge(age);
     }
 
-    public Employee getAlienByDepartment(String department){
+    public Employee getEmployeeByDepartment(String department){
         return repo.findByDepartment(department);
     }
 

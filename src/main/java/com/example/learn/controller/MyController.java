@@ -28,24 +28,25 @@ public class MyController {
     @RequestMapping("/addEmployee")
     @ResponseBody
     public Employee addEmployee(Employee employee){
-        employeeService.addEmployee(employee);
-        return employee;
+        return employeeService.addEmployee(employee);
     }
 
     @RequestMapping("/getEmployeeByAge")
-    public ModelAndView getAlienByAge(@RequestParam int age){
+    @ResponseBody
+    public Employee getEmployeeByAge(@RequestParam int age){
         ModelAndView mv=new ModelAndView("showEmployee.jsp");
-        Employee employee=employeeService.getAlienByAge(age);
+        Employee employee=employeeService.getEmployeeByAge(age);
         mv.addObject(employee);
-        return mv;
+        return employee;
     }
 
     @RequestMapping("/getEmployeeByDepartment")
-    public ModelAndView getAlienByDepartment(@RequestParam String department){
+    @ResponseBody
+    public Employee getEmployeeByDepartment(@RequestParam String department){
         ModelAndView mv=new ModelAndView("showEmployee.jsp");
-        Employee employee=employeeService.getAlienByDepartment(department);
+        Employee employee=employeeService.getEmployeeByDepartment(department);
         mv.addObject(employee);
-        return mv;
+        return employee;
     }
 }
 
